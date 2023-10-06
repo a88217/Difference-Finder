@@ -17,11 +17,6 @@ jobs:
         
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
-      with:
-        gradle-version: 8.2
-
-    - name: Update Wrapper
-      run: ./gradlew wrapper --gradle-version latest
 
     - name: Execute Gradle build
       run: ./gradlew build
