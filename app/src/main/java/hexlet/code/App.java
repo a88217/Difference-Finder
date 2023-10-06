@@ -4,6 +4,9 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import java.io.File;
 import java.util.concurrent.Callable;
@@ -16,14 +19,14 @@ public class App implements Callable<Integer> {
         System.exit(exitCode);
     }
     @Parameters(index = "0", description = "path to first file", paramLabel = "filepath1")
-    private File filepath1;
+    private String filepath1;
     @Parameters(index = "1", description = "path to second file", paramLabel = "filepath2")
-    private File filepath2;
+    private String filepath2;
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]", paramLabel = "format")
-    private String format = "";
+    private String format = "json";
     @Override
-    public Integer call() throws Exception { // your business logic goes here...
-        System.out.println("Hello World!");
+    public Integer call() throws Exception {
+        System.out.println(Differ.generate(filepath1, filepath2));
         return 0;
     }
 }
