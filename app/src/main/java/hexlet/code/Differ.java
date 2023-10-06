@@ -5,7 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.SortedMap;
+import java.util.Comparator;
 
 public class Differ {
     public static String generate(String file1, String file2) throws Exception {
@@ -52,12 +55,17 @@ public class Differ {
                         String[] arr2 = o2.getKey().split(" ");
                         String s1 = arr1.length == 1 ? arr1[0] : arr1[1];
                         String s2 = arr2.length == 1 ? arr2[0] : arr2[1];
-                        if (s1.equals(s2)) return arr2[0].compareTo(arr1[0]);
+                        if (s1.equals(s2)) {
+                            return arr2[0].compareTo(arr1[0]);
+                        }
                         return s1.compareTo(s2);
                     }
                 })
                 .forEach(str -> {
-                    if (!(str.getKey().startsWith("+") || str.getKey().startsWith("-")))  resultString.append("  ");
+                    if (!(str.getKey().startsWith("+") || str.getKey().startsWith("-"))) {
+                        resultString.append("  ");
+                    }
+
                     resultString.append("  ");
                     resultString.append(str.getKey());
                     resultString.append(": ");
