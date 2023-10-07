@@ -18,8 +18,8 @@ jobs:
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
 
-    #- name: Gradle Init
-    #  run: gradle init
+    - name: Gradle Init
+      run: gradle init
 
     - name: Execute Gradle build
       run: gradle build
@@ -32,7 +32,7 @@ jobs:
 
     #- name: Execute Gradle checkstyleMain
     #  run: ./gradlew checkstyleMain
-    - run: gradle test --stacktrace
+    #- run: gradle test --stacktrace
     - name: Publish code coverage
       uses: paambaati/codeclimate-action@v5.0.0
       env:
