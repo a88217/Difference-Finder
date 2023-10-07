@@ -29,10 +29,10 @@ checkstyle {
     maxErrors = 0
 }
 checkstyleMain {
-    source ='src/main/java'
+    source ='app/src/main/java'
 }
 checkstyleTest {
-    source ='src/test/java'
+    source ='app/src/test/java'
 }
 
 tasks.named('test', Test) {
