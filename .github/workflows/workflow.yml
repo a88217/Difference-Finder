@@ -18,12 +18,8 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         with:
           gradle-version: 8.3
-      - name: Execute Gradle build
-        run: gradle build
-      - run: gradle wrapper
-        
       - run: ./gradlew checkstyleMain
-      - run: gradle test
+      - run: ./gradlew test
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
@@ -33,5 +29,4 @@ jobs:
           coverageCommand: make report
           coverageLocations: ${{github.workspace}}app/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
 
-      - name: Execute Gradle build
-        run: ./gradlew build
+      
