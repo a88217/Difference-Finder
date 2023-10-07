@@ -27,6 +27,9 @@ jobs:
     - name: Execute Gradle build
       run: ./gradlew build
 
+    - name: Execute Gradle tasks --all
+      run: ./gradlew build  
+
     - name: Execute Gradle checkstyleMain
       run: ./gradlew checkstyleMain
     #- run: gradle test
