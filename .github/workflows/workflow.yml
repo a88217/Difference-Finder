@@ -27,8 +27,9 @@ jobs:
     - name: Execute Gradle build
       run: ./gradlew build
 
-    - run: ./gradlew checkstyleMain
-    - run: gradle test
+    - name: Execute Gradle checkstyleMain
+      run: ./gradlew checkstyleMain
+    #- run: gradle test
     - name: Publish code coverage
       uses: paambaati/codeclimate-action@v5.0.0
       env:
