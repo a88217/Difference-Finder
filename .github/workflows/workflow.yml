@@ -21,11 +21,11 @@ jobs:
     #- name: Gradle Init
     #  run: gradle init
 
-    - name: Gradle Wrapper
-      run: gradle wrapper
-
     - name: Execute Gradle build
-      run: ./gradlew build
+      run: gradle build
+    
+    - name: Gradle Wrapper
+      run: gradle wrapper    
 
     - name: Execute Gradle tasks
       run: ./gradlew tasks --all  
