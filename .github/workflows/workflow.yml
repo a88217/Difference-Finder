@@ -21,10 +21,13 @@ jobs:
     - name: Gradle Init
       run: gradle init
 
-    - name: Execute Gradle build
-      run: gradle build
+    - name: Gradle Wrapper
+      run: gradle wrapper
 
-    - run: gradle checkstyleMain
+    - name: Execute Gradle build
+      run: ./gradlew build
+
+    - run: ./gradlew checkstyleMain
     - run: gradle test
     - name: Publish code coverage
       uses: paambaati/codeclimate-action@v5.0.0
