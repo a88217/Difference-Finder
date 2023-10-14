@@ -8,3 +8,6 @@
 
 ### Codeclimate TestCoverage:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/098528b02ee65fd10d06/test_coverage)](https://codeclimate.com/github/a88217/java-project-71/test_coverage)
+
+### Asciinema Step7:
+https://asciinema.org/a/OICpfmamvVQg8ObdOgvao11Zw

@@ -12,19 +12,8 @@ import java.util.Comparator;
 
 public class Differ {
     public static String generate(String file1, String file2) throws Exception {
-        String readFilePath1 = file1;
-        String readFilePath2 = file2;
-
-        Path path1 = Paths.get(readFilePath1).toAbsolutePath().normalize();
-        Path path2 = Paths.get(readFilePath2).toAbsolutePath().normalize();
-        if (!Files.exists(path1) || !Files.exists(path2)) {
-            throw new Exception("File '" + path1 + "' or '" + path2 + "' does not exist");
-        }
-        ObjectMapper objectMapper = new ObjectMapper();
-        String content1 = Files.readString(path1);
-        String content2 = Files.readString(path2);
-        Map<String, Object> mapFile1 = objectMapper.readValue(content1, Map.class);
-        Map<String, Object> mapFile2 = objectMapper.readValue(content2, Map.class);
+        Map<String, Object> mapFile1 = Parser.parse(file1);
+        Map<String, Object> mapFile2 = Parser.parse(file2);
 
         SortedMap<String, Object> resultMap = new TreeMap<>();
         StringBuilder resultString = new StringBuilder("{\n");
