@@ -22,7 +22,7 @@ public class App implements Callable<Integer> {
     private String format = "stylish";
     @Override
     public Integer call() throws Exception {
-        System.out.println(Format.stylish(Differ.generate(filepath1, filepath2)));
+        System.out.println(Differ.generate(filepath1, filepath2, format));
         return 0;
     }
 }
