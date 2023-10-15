@@ -11,3 +11,9 @@
 
 ### Asciinema Step7:
 https://asciinema.org/a/OICpfmamvVQg8ObdOgvao11Zw
+
+### Asciinema Step8:
+https://asciinema.org/a/idXONnic5EDcKdjIZHXqjroAQ
+
+### Asciinema Step9:
+https://asciinema.org/a/SOn9ymZnzyZxPPOVt0AAsmkyg
