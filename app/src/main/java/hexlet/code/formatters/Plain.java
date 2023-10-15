@@ -9,7 +9,7 @@ public class Plain {
         Iterator it = resultMap.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            String key =(String)entry.getKey();
+            String key = (String) entry.getKey();
             Object value = entry.getValue();
             if (value instanceof String) {
                 value = "'" + value + "'";
