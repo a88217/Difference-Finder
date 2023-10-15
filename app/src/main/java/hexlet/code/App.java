@@ -21,7 +21,7 @@ public class App implements Callable<Integer> {
     @Option(names = {"-f", "--format"}, description = "output format [default: stylish]", paramLabel = "format")
     private String format = "stylish";
     @Override
-    public Integer call() throws Exception {
+    public final Integer call() throws Exception {
         System.out.println(Differ.generate(filepath1, filepath2, format));
         return 0;
     }
