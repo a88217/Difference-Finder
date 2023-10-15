@@ -3,7 +3,7 @@ package hexlet.code.formatters;
 import java.util.Map;
 
 public class Stylish {
-    public static String format (Map<String, Object> resultMap) {
+    public static String format(Map<String, Object> resultMap) {
         StringBuilder resultString = new StringBuilder("{\n");
         resultMap.entrySet().stream()
                 .forEach(str -> {
