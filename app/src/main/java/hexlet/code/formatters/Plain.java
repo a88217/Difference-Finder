@@ -1,12 +1,7 @@
 package hexlet.code.formatters;
 
-import net.sf.saxon.expr.Component;
-
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Plain {
     public static String format (Map<String, Object> resultMap) {
@@ -50,29 +45,3 @@ public class Plain {
         return resultString.toString().substring(0, resultString.toString().length() - 1);
     }
 }
-
-/*
-forEach(str -> {
-                    if (str.getKey().startsWith("-mod")) {
-
-                    }
-                    if (str.getKey().startsWith("+mod") || str.getKey().startsWith("- ") || str.getKey().startsWith("+ ")) {
-                        resultString.append("Property '");
-                        resultString.append(str.getKey().split(" ")[1]);
-                        resultString.append("' was ");
-                        if (str.getKey().startsWith("- ")) {
-                            resultString.append("removed");
-                        } else if (str.getKey().startsWith("+ ")) {
-                            resultString.append("added with value: ");
-                            resultString.append(str.getValue());
-                        } else {
-                            resultString.append("updated. From ");
-                            resultString.append(oldValue);
-                            resultString.append(" to ");
-                            resultString.append(str.getValue());
-
-                        }
-                        resultString.append("\n");
-                    }
-                })
-*/

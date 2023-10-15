@@ -1,13 +1,10 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import hexlet.code.formatters.Plain;
-import hexlet.code.formatters.Stylish;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.SortedMap;
+import java.util.Comparator;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
 
 public class Differ {
     public static String generate(String file1, String file2, String formatName) throws Exception {
