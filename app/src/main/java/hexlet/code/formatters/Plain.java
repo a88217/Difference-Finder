@@ -47,7 +47,7 @@ public class Plain {
                 resultString.append("\n");
             }
         }
-        return resultString.toString();
+        return resultString.toString().substring(0, resultString.toString().length() - 1);
     }
 }
 
