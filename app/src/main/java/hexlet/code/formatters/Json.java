@@ -9,6 +9,6 @@ public class Json {
         ObjectMapper objectMapper = new ObjectMapper();
 
         String resultMapAsString = objectMapper.writeValueAsString(resultMap);
-        return resultMapAsString;
+        return resultMapAsString.replace("-mod ", "- ").replace("+mod ", "+ ");
     }
 }
