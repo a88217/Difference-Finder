@@ -1,3 +1,10 @@
+### Вычислитель отличий – программа, определяющая разницу между двумя структурами данных. 
+
+Возможности утилиты:
+
+Поддержка разных входных форматов: yaml и json
+Генерация отчета в виде plain text, stylish и json
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/a88217/java-project-71/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/a88217/java-project-71/actions)
 
