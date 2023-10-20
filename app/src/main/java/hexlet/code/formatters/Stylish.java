@@ -1,28 +1,44 @@
 package hexlet.code.formatters;
 
+import java.util.List;
 import java.util.Map;
 
 public class Stylish {
-    public static String format(Map<String, Object> resultMap) {
+
+    public static String format(Map<String, List> resultMap) {
         StringBuilder resultString = new StringBuilder("{\n");
         resultMap.entrySet().stream()
                 .forEach(str -> {
-                    if (!(str.getKey().startsWith("+") || str.getKey().startsWith("-"))) {
-                        resultString.append("  ");
-                    }
-                    resultString.append("  ");
-                    if (str.getKey().startsWith("-mod")) {
-                        resultString.append("- ");
-                        resultString.append(str.getKey().split(" ")[1]);
-                    } else if (str.getKey().startsWith("+mod")) {
-                        resultString.append("+ ");
-                        resultString.append(str.getKey().split(" ")[1]);
-                    } else {
+                    if (str.getValue().get(0).equals("Unchanged")) {
+                        resultString.append("    ");
                         resultString.append(str.getKey());
+                        resultString.append(": ");
+                        resultString.append(str.getValue().get(1));
+                        resultString.append("\n");
+                    } else if (str.getValue().get(0).equals("Modified")) {
+                        resultString.append("  - ");
+                        resultString.append(str.getKey());
+                        resultString.append(": ");
+                        resultString.append(str.getValue().get(1));
+                        resultString.append("\n");
+                        resultString.append("  + ");
+                        resultString.append(str.getKey());
+                        resultString.append(": ");
+                        resultString.append(str.getValue().get(2));
+                        resultString.append("\n");
+                    } else if (str.getValue().get(0).equals("Deleted")){
+                        resultString.append("  - ");
+                        resultString.append(str.getKey());
+                        resultString.append(": ");
+                        resultString.append(str.getValue().get(1));
+                        resultString.append("\n");
+                    } else {
+                        resultString.append("  + ");
+                        resultString.append(str.getKey());
+                        resultString.append(": ");
+                        resultString.append(str.getValue().get(1));
+                        resultString.append("\n");
                     }
-                    resultString.append(": ");
-                    resultString.append((str.getValue()));
-                    resultString.append("\n");
                 });
         resultString.append("}");
         return resultString.toString();
