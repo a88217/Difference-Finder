@@ -18,12 +18,14 @@ public class DifCalculate {
                             if (mapFile2.get(entry.getKey()).equals(entry.getValue())) {
                                 resultMap.put(entry.getKey(), Arrays.asList("Unchanged", entry.getValue()));
                             } else {
-                                resultMap.put(entry.getKey(), Arrays.asList("Modified", entry.getValue(), mapFile2.get(entry.getKey())));
+                                resultMap.put(entry.getKey(),
+                                        Arrays.asList("Modified", entry.getValue(), mapFile2.get(entry.getKey())));
                             }
                         } else if (mapFile2.get(entry.getKey()) == null && entry.getValue() == null) {
                             resultMap.put(entry.getKey(), Arrays.asList("Unchanged", null));
                         } else {
-                                resultMap.put(entry.getKey(), Arrays.asList("Modified", entry.getValue(), mapFile2.get(entry.getKey())));
+                                resultMap.put(entry.getKey(),
+                                        Arrays.asList("Modified", entry.getValue(), mapFile2.get(entry.getKey())));
                         }
                     } else {
                             resultMap.put(entry.getKey(), Arrays.asList("Deleted", entry.getValue()));
