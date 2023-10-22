@@ -24,17 +24,17 @@ public class DifCalculate {
                         } else if (mapFile2.get(entry.getKey()) == null && entry.getValue() == null) {
                             resultMap.put(entry.getKey(), Arrays.asList("Unchanged", null));
                         } else {
-                                resultMap.put(entry.getKey(),
-                                        Arrays.asList("Modified", entry.getValue(), mapFile2.get(entry.getKey())));
+                            resultMap.put(entry.getKey(),
+                                    Arrays.asList("Modified", entry.getValue(), mapFile2.get(entry.getKey())));
                         }
                     } else {
-                            resultMap.put(entry.getKey(), Arrays.asList("Deleted", entry.getValue()));
+                        resultMap.put(entry.getKey(), Arrays.asList("Deleted", entry.getValue()));
                     }
                 });
         mapFile2.entrySet().stream()
                 .forEach(entry -> {
                     if (!mapFile1.containsKey(entry.getKey())) {
-                            resultMap.put(entry.getKey(), Arrays.asList("Added", entry.getValue()));
+                        resultMap.put(entry.getKey(), Arrays.asList("Added", entry.getValue()));
                     }
                 });
         return resultMap;
