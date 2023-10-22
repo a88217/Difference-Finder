@@ -12,30 +12,35 @@ public class Plain {
             Map.Entry entry = (Map.Entry) it.next();
             String key = (String) entry.getKey();
             List value = (List) entry.getValue();
+            String keyStatus = (String) value.get(0);
             for (int i = 1; i < value.size(); i++) {
                 value.set(i, stringify(value.get(i)));
             }
-            if (value.get(0).equals("Modified")) {
-                resultString.append("Property '");
-                resultString.append(key);
-                resultString.append("' was updated. From ");
-                resultString.append(value.get(1));
-                resultString.append(" to ");
-                resultString.append(value.get(2));
-                resultString.append("\n");
-            }
-            if (value.get(0).equals("Deleted")) {
-                resultString.append("Property '");
-                resultString.append(key);
-                resultString.append("' was removed");
-                resultString.append("\n");
-            }
-            if (value.get(0).equals("Added")) {
-                resultString.append("Property '");
-                resultString.append(key);
-                resultString.append("' was added with value: ");
-                resultString.append(value.get(1));
-                resultString.append("\n");
+            switch (keyStatus) {
+                case "Modified":
+                    resultString.append("Property '");
+                    resultString.append(key);
+                    resultString.append("' was updated. From ");
+                    resultString.append(value.get(1));
+                    resultString.append(" to ");
+                    resultString.append(value.get(2));
+                    resultString.append("\n");
+                    break;
+                case "Deleted":
+                    resultString.append("Property '");
+                    resultString.append(key);
+                    resultString.append("' was removed");
+                    resultString.append("\n");
+                    break;
+                case "Added":
+                    resultString.append("Property '");
+                    resultString.append(key);
+                    resultString.append("' was added with value: ");
+                    resultString.append(value.get(1));
+                    resultString.append("\n");
+                    break;
+                default:
+                    break;
             }
         }
         return resultString.toString().substring(0, resultString.toString().length() - 1);

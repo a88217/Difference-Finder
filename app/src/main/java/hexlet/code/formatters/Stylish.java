@@ -9,13 +9,7 @@ public class Stylish {
         StringBuilder resultString = new StringBuilder("{\n");
         resultMap.entrySet().stream()
                 .forEach(str -> {
-                    if (str.getValue().get(0).equals("Unchanged")) {
-                        resultString.append("    ");
-                        resultString.append(str.getKey());
-                        resultString.append(": ");
-                        resultString.append(str.getValue().get(1));
-                        resultString.append("\n");
-                    } else if (str.getValue().get(0).equals("Modified")) {
+                    if (str.getValue().get(0).equals("Modified")) {
                         resultString.append("  - ");
                         resultString.append(str.getKey());
                         resultString.append(": ");
@@ -26,14 +20,14 @@ public class Stylish {
                         resultString.append(": ");
                         resultString.append(str.getValue().get(2));
                         resultString.append("\n");
-                    } else if (str.getValue().get(0).equals("Deleted")){
-                        resultString.append("  - ");
-                        resultString.append(str.getKey());
-                        resultString.append(": ");
-                        resultString.append(str.getValue().get(1));
-                        resultString.append("\n");
                     } else {
-                        resultString.append("  + ");
+                        if (str.getValue().get(0).equals("Unchanged")) {
+                            resultString.append("    ");
+                        } else if (str.getValue().get(0).equals("Deleted")) {
+                            resultString.append("  - ");
+                        } else {
+                            resultString.append("  + ");
+                        }
                         resultString.append(str.getKey());
                         resultString.append(": ");
                         resultString.append(str.getValue().get(1));
