@@ -20,7 +20,7 @@ public class Stylish {
                         case "Deleted":
                             resultString.append("  - ");
                             break;
-                        case "Modified":
+                        default:
                             resultString.append("  - ");
                             resultString.append(str.getKey());
                             resultString.append(": ");
