@@ -9,25 +9,30 @@ public class Stylish {
         StringBuilder resultString = new StringBuilder("{\n");
         resultMap.entrySet().stream()
                 .forEach(str -> {
-                    if (str.getValue().get(0).equals("Modified")) {
-                        resultString.append("  - ");
-                        resultString.append(str.getKey());
-                        resultString.append(": ");
-                        resultString.append(str.getValue().get(1));
-                        resultString.append("\n");
-                        resultString.append("  + ");
-                        resultString.append(str.getKey());
-                        resultString.append(": ");
-                        resultString.append(str.getValue().get(2));
-                        resultString.append("\n");
-                    } else {
-                        if (str.getValue().get(0).equals("Unchanged")) {
+                    String entryState = (String) str.getValue().get(0);
+                    switch (entryState) {
+                        case "Unchanged":
                             resultString.append("    ");
-                        } else if (str.getValue().get(0).equals("Deleted")) {
-                            resultString.append("  - ");
-                        } else {
+                            break;
+                        case "Added":
                             resultString.append("  + ");
-                        }
+                            break;
+                        case "Deleted":
+                            resultString.append("  - ");
+                            break;
+                        case "Modified":
+                            resultString.append("  - ");
+                            resultString.append(str.getKey());
+                            resultString.append(": ");
+                            resultString.append(str.getValue().get(1));
+                            resultString.append("\n");
+                            resultString.append("  + ");
+                            resultString.append(str.getKey());
+                            resultString.append(": ");
+                            resultString.append(str.getValue().get(2));
+                            resultString.append("\n");
+                    }
+                    if (!entryState.equals("Modified")) {
                         resultString.append(str.getKey());
                         resultString.append(": ");
                         resultString.append(str.getValue().get(1));

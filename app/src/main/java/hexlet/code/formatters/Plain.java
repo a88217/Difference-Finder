@@ -13,31 +13,17 @@ public class Plain {
             String key = (String) entry.getKey();
             List value = (List) entry.getValue();
             String keyStatus = (String) value.get(0);
-            for (int i = 1; i < value.size(); i++) {
-                value.set(i, stringify(value.get(i)));
-            }
             switch (keyStatus) {
                 case "Modified":
-                    resultString.append("Property '");
-                    resultString.append(key);
-                    resultString.append("' was updated. From ");
-                    resultString.append(value.get(1));
-                    resultString.append(" to ");
-                    resultString.append(value.get(2));
-                    resultString.append("\n");
+                    resultString.append(String.format("Property '%s' was updated. From %s to %s\n",
+                            key, stringify(value.get(1)), stringify(value.get(2))));
                     break;
                 case "Deleted":
-                    resultString.append("Property '");
-                    resultString.append(key);
-                    resultString.append("' was removed");
-                    resultString.append("\n");
+                    resultString.append(String.format("Property '%s' was removed\n", key));
                     break;
                 case "Added":
-                    resultString.append("Property '");
-                    resultString.append(key);
-                    resultString.append("' was added with value: ");
-                    resultString.append(value.get(1));
-                    resultString.append("\n");
+                    resultString.append(String.format("Property '%s' was added with value: %s\n",
+                            key, stringify(value.get(1))));
                     break;
                 default:
                     break;
@@ -47,17 +33,14 @@ public class Plain {
     }
 
     private static String stringify(Object value) {
-        if (value == null) {
-            return "null";
-        }
 
         if (value instanceof String) {
             return "'" + value + "'";
         }
-
         if (value instanceof Map || value instanceof List) {
             return "[complex value]";
         }
-        return value.toString();
+        return String.valueOf(value);
     }
+
 }
