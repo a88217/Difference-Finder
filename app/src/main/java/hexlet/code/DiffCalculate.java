@@ -6,7 +6,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.Arrays;
 
-public class DifCalculate {
+public class DiffCalculate {
 
     public static Map<String, List> calculate(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
 

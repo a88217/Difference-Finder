@@ -34,10 +34,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateJsonDefault() throws Exception {
-        Path path1 = Paths.get("src/test/resources/file1.json").toAbsolutePath().normalize();
-        Path path2 = Paths.get("src/test/resources/file2.json").toAbsolutePath().normalize();
-        String file1 = path1.toString();
-        String file2 = path2.toString();
+        String file1 = "src/test/resources/file1.json";
+        String file2 = "src/test/resources/file2.json";
         String expected = resultStylish;
         String actual = Differ.generate(file1, file2);
         assertEquals(expected, actual);
@@ -45,10 +43,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateYamlDefault() throws Exception {
-        Path path1 = Paths.get("src/test/resources/file1YAML.yml").toAbsolutePath().normalize();
-        Path path2 = Paths.get("src/test/resources/file2YAML.yml").toAbsolutePath().normalize();
-        String file1 = path1.toString();
-        String file2 = path2.toString();
+        String file1 = "src/test/resources/file1YAML.yml";
+        String file2 = "src/test/resources/file2YAML.yml";
         String expected = resultStylish;
         String actual = Differ.generate(file1, file2);
         assertEquals(expected, actual);
@@ -56,10 +52,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateJsonStylish() throws Exception {
-        Path path1 = Paths.get("src/test/resources/file1.json").toAbsolutePath().normalize();
-        Path path2 = Paths.get("src/test/resources/file2.json").toAbsolutePath().normalize();
-        String file1 = path1.toString();
-        String file2 = path2.toString();
+        String file1 = "src/test/resources/file1.json";
+        String file2 = "src/test/resources/file2.json";
         String expected = resultStylish;
         String actual = Differ.generate(file1, file2, "stylish");
         assertEquals(expected, actual);
@@ -67,10 +61,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateYamlStylish() throws Exception {
-        Path path1 = Paths.get("src/test/resources/file1YAML.yml").toAbsolutePath().normalize();
-        Path path2 = Paths.get("src/test/resources/file2YAML.yml").toAbsolutePath().normalize();
-        String file1 = path1.toString();
-        String file2 = path2.toString();
+        String file1 = "src/test/resources/file1YAML.yml";
+        String file2 = "src/test/resources/file2YAML.yml";
         String expected = resultStylish;
         String actual = Differ.generate(file1, file2, "stylish");
         assertEquals(expected, actual);
@@ -78,10 +70,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateJsonPlain() throws Exception {
-        Path path1 = Paths.get("src/test/resources/file1.json").toAbsolutePath().normalize();
-        Path path2 = Paths.get("src/test/resources/file2.json").toAbsolutePath().normalize();
-        String file1 = path1.toString();
-        String file2 = path2.toString();
+        String file1 = "src/test/resources/file1.json";
+        String file2 = "src/test/resources/file2.json";
         String expected = resultPlain;
         String actual = Differ.generate(file1, file2, "plain");
         assertEquals(expected, actual);
@@ -89,10 +79,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateYamlPlain() throws Exception {
-        Path path1 = Paths.get("src/test/resources/file1.json").toAbsolutePath().normalize();
-        Path path2 = Paths.get("src/test/resources/file2.json").toAbsolutePath().normalize();
-        String file1 = path1.toString();
-        String file2 = path2.toString();
+        String file1 = "src/test/resources/file1.json";
+        String file2 = "src/test/resources/file2.json";
         String expected = resultPlain;
         String actual = Differ.generate(file1, file2, "plain");
         assertEquals(expected, actual);
@@ -100,10 +88,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateJsonJson() throws Exception {
-        Path path1 = Paths.get("src/test/resources/file1.json").toAbsolutePath().normalize();
-        Path path2 = Paths.get("src/test/resources/file2.json").toAbsolutePath().normalize();
-        String file1 = path1.toString();
-        String file2 = path2.toString();
+        String file1 = "src/test/resources/file1.json";
+        String file2 = "src/test/resources/file2.json";
         String expected = resultJson;
         String actual = Differ.generate(file1, file2, "json");
         assertEquals(expected, actual);
@@ -111,10 +97,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateYamlJson() throws Exception {
-        Path path1 = Paths.get("src/test/resources/file1.json").toAbsolutePath().normalize();
-        Path path2 = Paths.get("src/test/resources/file2.json").toAbsolutePath().normalize();
-        String file1 = path1.toString();
-        String file2 = path2.toString();
+        String file1 = "src/test/resources/file1.json";
+        String file2 = "src/test/resources/file2.json";
         String expected = resultJson;
         String actual = Differ.generate(file1, file2, "json");
         assertEquals(expected, actual);
