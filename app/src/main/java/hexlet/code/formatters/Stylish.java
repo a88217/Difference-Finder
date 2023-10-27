@@ -12,34 +12,34 @@ public class Stylish {
                     String entryState = (String) str.getValue().get(0);
                     switch (entryState) {
                         case "Unchanged":
-                            resultString.append("    ");
+                            resultString.append(String.format(unchangedKey(), str.getKey(), str.getValue().get(1)));
                             break;
                         case "Added":
-                            resultString.append("  + ");
+                            resultString.append(String.format(addedKey(), str.getKey(), str.getValue().get(1)));
                             break;
                         case "Deleted":
-                            resultString.append("  - ");
+                            resultString.append(String.format(deletedKey(), str.getKey(), str.getValue().get(1)));
                             break;
                         default:
-                            resultString.append("  - ");
-                            resultString.append(str.getKey());
-                            resultString.append(": ");
-                            resultString.append(str.getValue().get(1));
-                            resultString.append("\n");
-                            resultString.append("  + ");
-                            resultString.append(str.getKey());
-                            resultString.append(": ");
-                            resultString.append(str.getValue().get(2));
-                            resultString.append("\n");
-                    }
-                    if (!entryState.equals("Modified")) {
-                        resultString.append(str.getKey());
-                        resultString.append(": ");
-                        resultString.append(str.getValue().get(1));
-                        resultString.append("\n");
+                            resultString.append(String.format(modifiedKey(),
+                                    str.getKey(), str.getValue().get(1), str.getKey(), str.getValue().get(2)));
                     }
                 });
         resultString.append("}");
         return resultString.toString();
     }
+
+    public static String addedKey() {
+        return "  + %s: %s\n";
+    }
+    public static String deletedKey() {
+        return "  - %s: %s\n";
+    }
+    public static String unchangedKey() {
+        return "    %s: %s\n";
+    }
+    public static String modifiedKey() {
+        return "  - %s: %s\n  + %s: %s\n";
+    }
+
 }

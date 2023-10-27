@@ -1,15 +1,15 @@
-package hexlet.code;
+package hexlet.code.parsers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class ParserYml implements Parser {
+public class ParserJson implements Parser {
     public final Map<String, Object> parse(String fileContent) throws JsonProcessingException {
         Map<String, Object> fileMap = new HashMap<>();
-        ObjectMapper objectMapper = new YAMLMapper();
+        ObjectMapper objectMapper = new ObjectMapper();
         fileMap = objectMapper.readValue(fileContent, Map.class);
         return fileMap;
     }
