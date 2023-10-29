@@ -11,13 +11,13 @@ public class Stylish {
                 .forEach(str -> {
                     String entryState = (String) str.getValue().get(0);
                     switch (entryState) {
-                        case "Unchanged":
+                        case "unchanged":
                             resultString.append(String.format(unchangedKey(), str.getKey(), str.getValue().get(1)));
                             break;
-                        case "Added":
+                        case "added":
                             resultString.append(String.format(addedKey(), str.getKey(), str.getValue().get(1)));
                             break;
-                        case "Deleted":
+                        case "deleted":
                             resultString.append(String.format(deletedKey(), str.getKey(), str.getValue().get(1)));
                             break;
                         default:

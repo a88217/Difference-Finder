@@ -21,14 +21,14 @@ public class DiffCalculate {
                 .forEach(key -> {
                     if (mapFile1.containsKey(key) && mapFile2.containsKey(key)) {
                         if (Objects.equals(mapFile1.get(key), mapFile2.get(key))) {
-                            resultMap.put(key, Arrays.asList("Unchanged", mapFile1.get(key)));
+                            resultMap.put(key, Arrays.asList("unchanged", mapFile1.get(key)));
                         } else {
-                            resultMap.put(key, Arrays.asList("Modified", mapFile1.get(key), mapFile2.get(key)));
+                            resultMap.put(key, Arrays.asList("modified", mapFile1.get(key), mapFile2.get(key)));
                         }
                     } else if (mapFile1.containsKey(key) && !mapFile2.containsKey(key)) {
-                        resultMap.put(key, Arrays.asList("Deleted", mapFile1.get(key)));
+                        resultMap.put(key, Arrays.asList("deleted", mapFile1.get(key)));
                     } else {
-                        resultMap.put(key, Arrays.asList("Added", mapFile2.get(key)));
+                        resultMap.put(key, Arrays.asList("added", mapFile2.get(key)));
                     }
                 });
         return resultMap;

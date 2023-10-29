@@ -14,14 +14,14 @@ public class Plain {
             List value = (List) entry.getValue();
             String keyStatus = (String) value.get(0);
             switch (keyStatus) {
-                case "Modified":
+                case "modified":
                     resultString.append(String.format("Property '%s' was updated. From %s to %s\n",
                             key, stringify(value.get(1)), stringify(value.get(2))));
                     break;
-                case "Deleted":
+                case "deleted":
                     resultString.append(String.format("Property '%s' was removed\n", key));
                     break;
-                case "Added":
+                case "added":
                     resultString.append(String.format("Property '%s' was added with value: %s\n",
                             key, stringify(value.get(1))));
                     break;

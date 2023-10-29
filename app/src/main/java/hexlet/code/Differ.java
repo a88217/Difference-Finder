@@ -10,10 +10,10 @@ import java.util.List;
 
 public class Differ {
 
-    public static String generate(String fileName1, String fileName2, String formatName) throws Exception {
-        Map<String, Object> mapFile1 = getData(fileName1);
-        Map<String, Object> mapFile2 = getData(fileName2);
-        Map<String, List> resultMap = DiffCalculate.calculate(mapFile1, mapFile2);
+    public static String generate(String path1, String path2, String formatName) throws Exception {
+        Map<String, Object> data1 = getData(path1);
+        Map<String, Object> data2 = getData(path2);
+        Map<String, List> resultMap = DiffCalculate.calculate(data1, data2);
         return Formatter.format(formatName, resultMap);
     }
 
