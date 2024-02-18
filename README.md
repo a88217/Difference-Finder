@@ -1,9 +1,13 @@
-### Вычислитель отличий – программа, определяющая разницу между двумя структурами данных. 
+# Difference Finder
 
-Возможности утилиты:
+### Difference Finder is a program that determines the difference between two data structures.
 
-Поддержка разных входных форматов: yaml и json
-Генерация отчета в виде plain text, stylish и json
+Utility features:
+
+  * Supporting different input formats: yaml and json
+  * Generation a report in the form of plain text, stylish and json
+
+You can see a few examples of using utility below.
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/a88217/java-project-71/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/a88217/java-project-71/actions)
@@ -27,3 +31,4 @@ https://asciinema.org/a/SOn9ymZnzyZxPPOVt0AAsmkyg
 
 ### Asciinema Step10:
 https://asciinema.org/a/4yvGOrgJYHNqHCHzxDKOyNLef
+
