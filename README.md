@@ -1,6 +1,6 @@
 # Difference Finder
 
-### Difference Finder is a program that determines the difference between two data structures.
+### Difference Finder is a console program that determines the difference between two data structures.
 
 Utility features:
 
